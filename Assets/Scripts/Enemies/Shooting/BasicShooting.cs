@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicShooting : MonoBehaviour
+public class BasicShooting : Shooting
 {
     public GameObject projectilePrefab;
 
@@ -37,6 +37,7 @@ public class BasicShooting : MonoBehaviour
 
 
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        shotsFired++;
         projectile.GetComponent<Rigidbody>().AddForce(projectileDirection * projectileSpeed);
         GameManager.Instance.enemyProjectiles.Add(projectile);
 

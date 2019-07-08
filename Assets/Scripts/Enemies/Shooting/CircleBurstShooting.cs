@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircleBurstShooting : MonoBehaviour
+public class CircleBurstShooting : Shooting
 {
     public GameObject projectilePrefab;
 
@@ -46,7 +46,7 @@ public class CircleBurstShooting : MonoBehaviour
             GameManager.Instance.enemyProjectiles.Add(projectile);
         }
 
-
+        shotsFired++;
         timeToShoot = reloadTime;
     }
 }

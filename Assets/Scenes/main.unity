@@ -315,6 +315,54 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!1 &256978784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 256978786}
+  - component: {fileID: 256978785}
+  m_Layer: 0
+  m_Name: Boss1Projectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &256978785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256978784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624b4fe4e9485614c95b6ab9d2e27005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilesCount: 3
+  distanceFromCenter: 0.5
+  sendProjectilesPower: 200
+  lifeTime: 2
+  projectilePrefab: {fileID: 0}
+--- !u!4 &256978786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256978784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.462486, y: -2.3241148, z: -1.7815483}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &266340662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,14 +1630,15 @@ MonoBehaviour:
     type: 3}
   livesLeft: 4
   enemyPool:
-  - {fileID: 1159194428903728797, guid: 54fc2e0c4636ee048b991c44e2c62d32, type: 3}
+  - {fileID: 1926931737359915669, guid: a347dc88a852d024a8e37f0b6215cc67, type: 3}
   - {fileID: 6802745913490287276, guid: a21570412564dd345889952924f288f9, type: 3}
   - {fileID: 964576478834174581, guid: 2deb70dce0af20a41bebffc86ca4f22b, type: 3}
+  - {fileID: 1926931737359915669, guid: a347dc88a852d024a8e37f0b6215cc67, type: 3}
   portals: []
   enemyProjectiles: []
   minSpawnTime: 1.5
   maxSpawnTime: 2.2
-  enemiesPerWave: 3
+  enemiesPerWave: 1
   portalPrefab: {fileID: 847388203323242386, guid: e191c2649140f9a4bae0c41c3906a0fe,
     type: 3}
 --- !u!4 &1287603269
