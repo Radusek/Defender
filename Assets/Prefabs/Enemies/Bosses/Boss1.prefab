@@ -88,9 +88,9 @@ GameObject:
   - component: {fileID: 1926931737359943349}
   - component: {fileID: 1926931737359915672}
   - component: {fileID: 8815018500436839626}
-  - component: {fileID: 1926931737359915675}
-  - component: {fileID: 1926931737359915674}
-  - component: {fileID: 6223594445556948408}
+  - component: {fileID: 1945016434412897996}
+  - component: {fileID: 2362991584481302537}
+  - component: {fileID: 4514566094042483206}
   - component: {fileID: 2629988778017799416}
   - component: {fileID: 6412438605478292918}
   - component: {fileID: 4282759581719334406}
@@ -127,8 +127,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 0
@@ -146,7 +146,7 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 2
   m_Center: {x: 0, y: 0.8, z: -0.2}
---- !u!114 &1926931737359915675
+--- !u!114 &1945016434412897996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,14 +155,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1926931737359915669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb82b613d93995a40bf514239c881b67, type: 3}
+  m_Script: {fileID: 11500000, guid: bba6d98a60d63d34ea2e862d6c4800e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flightSpeed: 10
-  minChangeTime: 0.4
-  maxChangeTime: 2
-  directionRight: 1
---- !u!114 &1926931737359915674
+  flightSpeed: 7
+--- !u!114 &2362991584481302537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d5ddce2ce39e94b8892863cd4a6a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6223594445556948408
+--- !u!114 &4514566094042483206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,9 +180,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1926931737359915669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f47c1d6f0be74a441a8e18be28e30fb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 837972cebce346744855e0cd6313324f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 25
   reward: 750
 --- !u!114 &2629988778017799416
 MonoBehaviour:
@@ -216,7 +214,7 @@ MonoBehaviour:
   shotsFired: 0
   projectilePrefab: {fileID: 7826199739162168660, guid: 4944e38c379c1b9488130f45410a0dbf,
     type: 3}
-  projectileSpeed: 400
+  projectileSpeed: 1000
   reloadTime: 1.1
 --- !u!114 &4282759581719334406
 MonoBehaviour:

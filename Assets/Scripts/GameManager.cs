@@ -60,6 +60,9 @@ public class GameManager : MonoBehaviour {
     // ######################## ENEMIES ########################
 
     public GameObject[] enemyPool;
+    public GameObject[] bossPool;
+
+    public int bossWaveInterval = 4;
 
     //[HideInInspector]
     public List<portalScript> portals = new List<portalScript>();
@@ -198,6 +201,12 @@ public class GameManager : MonoBehaviour {
         timeToNextSpawn -= Time.deltaTime;
         if (timeToNextSpawn <= 0f && enemiesToSpawn > 0)
         {
+            if (waveNumber % bossWaveInterval == 0)
+            {
+                SummonBoss();
+                return;
+            }
+
             SummonEnemy();
 
             timeToNextSpawn = Random.Range(minSpawnTime, maxSpawnTime);
@@ -205,7 +214,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void SummonEnemy()
-    {
+    {    
         int maxRand = Mathf.Min(enemyPool.Length, waveNumber);
         int enemyType = Random.Range(0, maxRand);
 
@@ -220,6 +229,19 @@ public class GameManager : MonoBehaviour {
         portal.enemyPrefab = enemyPool[enemyType];
     }
 
+    void SummonBoss()
+    {
+        int bossCount = bossPool.Length;
+        int bossNumber = (waveNumber / bossWaveInterval) % bossCount;
+
+        Vector3 spawnPoint = new Vector3(10, 0, 0);
+
+        portalScript portal = Instantiate(portalPrefab, spawnPoint, Quaternion.identity);
+        portals.Add(portal);
+        enemiesToSpawn--;
+        portal.enemyPrefab = bossPool[bossNumber];
+    }
+
     void NextWave()
     {
         DestroyProjectiles();
@@ -232,6 +254,13 @@ public class GameManager : MonoBehaviour {
         nextWaveAnimationPlaying = true;
 
         enemiesToSpawn = enemiesPerWave;
+
+        //Boss wave
+        if (waveNumber % bossWaveInterval == 0)
+            enemiesToSpawn = 1;
+
+        minSpawnTime *= 0.98f; 
+        maxSpawnTime *= 0.97f; 
     }
 
 

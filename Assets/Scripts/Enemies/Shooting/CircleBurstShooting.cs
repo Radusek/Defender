@@ -37,8 +37,8 @@ public class CircleBurstShooting : Shooting
 
         for (int i = 0; i < burstSize; i++)
         {
-            double angle = Math.PI * 2D * (double)i / (double)burstSize;
-            Vector3 projectileDirection = new Vector3((float)Math.Cos(angle), (float)Math.Sin(angle), 0f);
+            float angle = Mathf.PI * 2f * i / burstSize;
+            Vector3 projectileDirection = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f);
             projectileDirection.Normalize();
 
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);

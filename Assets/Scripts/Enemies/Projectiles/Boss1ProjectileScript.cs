@@ -19,6 +19,8 @@ public class Boss1ProjectileScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        angle = Random.Range(0f, 2f * Mathf.PI);
+
         projectiles = new Rigidbody[projectilesCount];
 
         for (int i = 0; i < projectilesCount; i++)

@@ -1630,15 +1630,17 @@ MonoBehaviour:
     type: 3}
   livesLeft: 4
   enemyPool:
-  - {fileID: 1926931737359915669, guid: a347dc88a852d024a8e37f0b6215cc67, type: 3}
+  - {fileID: 1159194428903728797, guid: 54fc2e0c4636ee048b991c44e2c62d32, type: 3}
   - {fileID: 6802745913490287276, guid: a21570412564dd345889952924f288f9, type: 3}
   - {fileID: 964576478834174581, guid: 2deb70dce0af20a41bebffc86ca4f22b, type: 3}
+  bossPool:
   - {fileID: 1926931737359915669, guid: a347dc88a852d024a8e37f0b6215cc67, type: 3}
+  bossWaveInterval: 4
   portals: []
   enemyProjectiles: []
   minSpawnTime: 1.5
   maxSpawnTime: 2.2
-  enemiesPerWave: 1
+  enemiesPerWave: 4
   portalPrefab: {fileID: 847388203323242386, guid: e191c2649140f9a4bae0c41c3906a0fe,
     type: 3}
 --- !u!4 &1287603269
