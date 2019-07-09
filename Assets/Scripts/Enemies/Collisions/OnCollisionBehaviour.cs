@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnCollisionBehaviour : MonoBehaviour
+public class OnCollisionBehaviour : EnemyCollision
 {
     public int reward = 100;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == gameObject.layer)
+        if (collision.gameObject.layer == gameObject.layer || dead)
             return;
 
 
@@ -16,6 +16,7 @@ public class OnCollisionBehaviour : MonoBehaviour
             GameManager.Instance.AddScore(reward);
 
         GameManager.Instance.RemoveFromList(collision.gameObject.GetComponent<Rigidbody>());
+        dead = true;
         Destroy(collision.gameObject);
 
         GameManager.Instance.RemoveFromList(this.GetComponent<Rigidbody>());

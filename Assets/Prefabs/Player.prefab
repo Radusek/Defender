@@ -111,6 +111,8 @@ GameObject:
   - component: {fileID: 23046707551611260}
   - component: {fileID: 54149732350249090}
   - component: {fileID: 114925593058515882}
+  - component: {fileID: 6894170709040917752}
+  - component: {fileID: 6578037980154228416}
   - component: {fileID: 4463214259632270515}
   m_Layer: 9
   m_Name: Player
@@ -224,11 +226,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a4bde3adfa2d2478e7871325a57076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flightSpeed: 16
+  directionRight: 1
+  stopped: 1
+  rotationSpeed: 800
+--- !u!114 &6894170709040917752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767465330136360}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed66c925815658e42b0eb40fa0414fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 114925593058515882}
   projectilePrefab: {fileID: 1204542212610398, guid: df9121d040451d342938c15e11d577b7,
     type: 3}
   reloadTime: 0.125
-  flightSpeed: 16
-  rotationSpeed: 800
+--- !u!114 &6578037980154228416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767465330136360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8429018fc5b23124b9c6c88ebd1359d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 114925593058515882}
+  projectilePrefab: {fileID: 1204542212610398, guid: df9121d040451d342938c15e11d577b7,
+    type: 3}
+  reloadTime: 0.125
 --- !u!114 &4463214259632270515
 MonoBehaviour:
   m_ObjectHideFlags: 0

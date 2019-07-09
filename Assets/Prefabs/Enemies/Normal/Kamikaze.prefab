@@ -145,11 +145,11 @@ GameObject:
   m_Component:
   - component: {fileID: 964576478834210389}
   - component: {fileID: 5698065945151444932}
-  - component: {fileID: 2860744957921692341}
   - component: {fileID: 4797877162144659743}
   - component: {fileID: 4193721943143112271}
-  - component: {fileID: 3634285675857185967}
+  - component: {fileID: 8442003245011114359}
   - component: {fileID: 2093778649741198752}
+  - component: {fileID: 1989030184722171812}
   m_Layer: 12
   m_Name: Kamikaze
   m_TagString: Untagged
@@ -188,20 +188,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &2860744957921692341
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964576478834174581}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.9
-  m_Height: 4.1
-  m_Direction: 2
-  m_Center: {x: 0, y: -0.7, z: -1.35}
 --- !u!114 &4797877162144659743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d5ddce2ce39e94b8892863cd4a6a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3634285675857185967
+  selfModel: {fileID: 964576478834174581}
+--- !u!114 &8442003245011114359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,6 +241,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 691958309936317897, guid: 9fb6817b7762fbc43b3ac1a983f4f56b,
     type: 3}
+--- !u!136 &1989030184722171812
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964576478834174581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.9
+  m_Height: 4.1
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.58, z: -1.34}
 --- !u!1 &964576478834174583
 GameObject:
   m_ObjectHideFlags: 0
