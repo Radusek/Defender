@@ -30,13 +30,16 @@ public class GameManager : MonoBehaviour {
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI scoreText;
 
-    //[HideInInspector]
+    [HideInInspector]
     public bool nextWaveAnimationPlaying = false;
+
+    public GameObject scoreSubmitButton;
+    public InputField playerNameField;
 
 
     // ######################## ALL AIRCRAFTS ########################
 
-    //[HideInInspector]
+    [HideInInspector]
     public List<Rigidbody> rbs;
 
     public float verticalPosLimit = 8f;
@@ -45,7 +48,7 @@ public class GameManager : MonoBehaviour {
 
     // ######################## PLAYER ########################
 
-    //[HideInInspector]
+    [HideInInspector]
     public Rigidbody player;
     public GameObject playerPrefab;
 
@@ -64,7 +67,7 @@ public class GameManager : MonoBehaviour {
 
     public int bossWaveInterval = 4;
 
-    //[HideInInspector]
+    [HideInInspector]
     public List<portalScript> portals = new List<portalScript>();
 
     [HideInInspector]
@@ -82,7 +85,7 @@ public class GameManager : MonoBehaviour {
 
     public portalScript portalPrefab;
 
-
+    public bool quittingScene = false;
 
     private void Awake()
     {
@@ -98,6 +101,7 @@ public class GameManager : MonoBehaviour {
         nextWaveAnimation = nextWaveObject.GetComponent<Animator>();
         nextWaveObject.SetActive(false);
         playerMovement = player.GetComponent<PlayerMovement>();
+        Time.timeScale = 1f;
     }
 
     private void Update()
@@ -152,8 +156,6 @@ public class GameManager : MonoBehaviour {
         portals.Clear();
 
         totalScoreText.text = "Total score: " + score.ToString();
-
-        waveNumber = 1;
     }
 
     public void SetupLevel()
@@ -180,6 +182,7 @@ public class GameManager : MonoBehaviour {
         endScreenUI.SetActive(false);
 
         enemiesToSpawn = enemiesPerWave;
+        waveNumber = 1;
     }
 
     // Update is called once per frame
@@ -367,6 +370,9 @@ public class GameManager : MonoBehaviour {
 
     public void LoseLife()
     {
+        if (quittingScene)
+            return;
+
         DestroyAllAircrafts();
         //enemiesToSpawn--;
         DestroyProjectiles();
@@ -385,5 +391,46 @@ public class GameManager : MonoBehaviour {
 
         // GAME OVER
         CleanLevel();
+    }
+
+    public void SubmitScore()
+    {
+        string name = playerNameField.text;
+        if (name == "")
+            return;
+
+        bool firstChange = true;
+
+        int newScore = score;
+        int oldScore = 0;
+
+        string newString = "";
+        string oldString = "";
+
+        for (int i = 0; i < 8; i++)
+        {
+            int currentScore = PlayerPrefs.GetInt("scoreValue" + i.ToString());
+            if (newScore > currentScore)
+            {
+                oldScore = currentScore;
+                oldString = PlayerPrefs.GetString("score" + i.ToString());
+
+                PlayerPrefs.SetInt("scoreValue" + i.ToString(), newScore);
+
+                if (firstChange)
+                {
+                    PlayerPrefs.SetString("score" + i.ToString(), name.PadRight(12) + newScore.ToString().PadRight(9) + waveNumber.ToString().PadRight(4));
+                    firstChange = false;
+                }
+                else
+                    PlayerPrefs.SetString("score" + i.ToString(), newString);
+
+                newScore = oldScore;
+                newString = oldString;
+            }
+        }
+
+        scoreSubmitButton.SetActive(false);
+        playerNameField.gameObject.SetActive(false);
     }
 }

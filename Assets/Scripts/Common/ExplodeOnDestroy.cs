@@ -8,6 +8,9 @@ public class ExplodeOnDestroy : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (GameManager.Instance.quittingScene)
+            return;
+
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
     }
 }
