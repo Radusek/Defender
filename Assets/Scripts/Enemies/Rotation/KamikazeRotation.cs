@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KamikazeRotation : MonoBehaviour
 {
+    public GameObject selfModel;
     private GameObject target;
 
     // Start is called before the first frame update
@@ -18,6 +19,6 @@ public class KamikazeRotation : MonoBehaviour
         Vector3 relativePos = target.transform.position - transform.position;
 
         Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.back);
-        transform.rotation = rotation;
+        selfModel.transform.rotation = rotation;
     }
 }

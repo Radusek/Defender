@@ -162,7 +162,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.78, y: 0.25, z: 0.7}
+  m_Size: {x: 0.78, y: 0.28, z: 0.7}
   m_Center: {x: 0, y: 0.03, z: 0}
 --- !u!114 &720399664104090
 MonoBehaviour:
@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8affe551b71fb2d49a2d2ddecb9bb66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shotsFired: 0
   projectilePrefab: {fileID: 7826199739162168660, guid: 90b21b4bd9dca13429ac334652460c41,
     type: 3}
   projectileSpeed: 600
