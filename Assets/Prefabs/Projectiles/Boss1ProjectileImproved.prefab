@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 5250683876364779270}
   - component: {fileID: 5235942015540178829}
   m_Layer: 11
-  m_Name: Boss1Projectile
+  m_Name: Boss1ProjectileImproved
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ Transform:
   m_GameObject: {fileID: 7826199739162168660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.2936535, y: 1.8685312, z: 0}
-  m_LocalScale: {x: 0.936, y: 0.936, z: 0.936}
+  m_LocalScale: {x: 0.64800006, y: 0.64800006, z: 0.64800006}
   m_Children:
   - {fileID: 532988049166357383}
   m_Father: {fileID: 0}
@@ -258,11 +258,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624b4fe4e9485614c95b6ab9d2e27005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilesCount: 5
-  distanceFromCenter: 0.85
+  projectilesCount: 3
+  distanceFromCenter: 0.55
   sendProjectilesPower: 16
-  lifeTime: 0.9
-  projectilePrefab: {fileID: 7826199739162168660, guid: 90b21b4bd9dca13429ac334652460c41,
+  lifeTime: 0.5
+  projectilePrefab: {fileID: 7826199739162168660, guid: 4944e38c379c1b9488130f45410a0dbf,
     type: 3}
 --- !u!114 &5235942015540178829
 MonoBehaviour:

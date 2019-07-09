@@ -87,6 +87,8 @@ public class GameManager : MonoBehaviour {
 
     public bool quittingScene = false;
 
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -161,8 +163,7 @@ public class GameManager : MonoBehaviour {
     public void SetupLevel()
     {
         DestroyAllAircrafts();
-        player = Instantiate(playerPrefab).GetComponent<Rigidbody>();
-        playerMovement = player.GetComponent<PlayerMovement>();
+        RespawnPlayer();
 
         rbs = new List<Rigidbody>
         {
@@ -235,7 +236,12 @@ public class GameManager : MonoBehaviour {
     void SummonBoss()
     {
         int bossCount = bossPool.Length;
-        int bossNumber = (waveNumber / bossWaveInterval) % bossCount;
+        int bossNumber = waveNumber / bossWaveInterval - 1;
+
+        int uniqueBosses = bossCount / 3;
+
+        while (bossNumber >= bossCount)
+            bossNumber -= uniqueBosses;
 
         Vector3 spawnPoint = new Vector3(10, 0, 0);
 
@@ -262,8 +268,13 @@ public class GameManager : MonoBehaviour {
         if (waveNumber % bossWaveInterval == 0)
             enemiesToSpawn = 1;
 
-        minSpawnTime *= 0.98f; 
-        maxSpawnTime *= 0.97f; 
+        minSpawnTime *= 0.98f;
+        maxSpawnTime *= 0.97f;
+
+        float minRandomRange = 0.1f;
+
+        if (maxSpawnTime < minSpawnTime + minRandomRange)
+            maxSpawnTime = minSpawnTime + minRandomRange;
     }
 
 
@@ -382,8 +393,7 @@ public class GameManager : MonoBehaviour {
             livesLeft--;
             livesText.SetText("Lives: " + livesLeft.ToString());
 
-            player = Instantiate(playerPrefab).GetComponent<Rigidbody>();
-            playerMovement = player.gameObject.GetComponent<PlayerMovement>();
+            RespawnPlayer();
             rbs.Add(player);
 
             return;
@@ -391,6 +401,12 @@ public class GameManager : MonoBehaviour {
 
         // GAME OVER
         CleanLevel();
+    }
+
+    private void RespawnPlayer()
+    {
+        player = Instantiate(playerPrefab).GetComponent<Rigidbody>();
+        playerMovement = player.GetComponent<PlayerMovement>();
     }
 
     public void SubmitScore()

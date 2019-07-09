@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 25
-  reward: 750
+  reward: 1250
   healthBar: {fileID: 8635256800221516413}
 --- !u!54 &1418763440251993910
 Rigidbody:
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 1813588177185843508}
   - component: {fileID: 1813588177185843511}
   m_Layer: 10
-  m_Name: Boss1
+  m_Name: Boss1medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba6d98a60d63d34ea2e862d6c4800e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flightSpeed: 7
+  flightSpeed: 6.5
 --- !u!114 &1813588177185843499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,7 +235,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7826199739162168660, guid: 4944e38c379c1b9488130f45410a0dbf,
     type: 3}
   projectileSpeed: 1000
-  reloadTime: 1.1
+  reloadTime: 1
 --- !u!114 &1813588177185843511
 MonoBehaviour:
   m_ObjectHideFlags: 0

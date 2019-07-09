@@ -20,10 +20,12 @@ public class DoublePlayerShooting : PlayerShooting
         {
             GameObject projectile = Instantiate(projectilePrefab, transform.position + i * 0.2f * Vector3.down, chosenRotation);
 
-            if (movement.stopped == false)
-                projectile.GetComponent<Rigidbody>().AddForce(new Vector3(projectileDirection * 1000f, 0f, 0f));
+            projectile.GetComponent<Rigidbody>().AddForce(new Vector3(
+                movement.stopped == false ? projectileDirection * 500f : 0f,
+                i == 0 ? 200f : -200f,
+                0f)
+            );
         }
-
 
         timeToShoot = reloadTime;
     }
