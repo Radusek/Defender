@@ -2121,21 +2121,21 @@ MonoBehaviour:
   - {fileID: 6802745913490287276, guid: a21570412564dd345889952924f288f9, type: 3}
   - {fileID: 964576478834174581, guid: 2deb70dce0af20a41bebffc86ca4f22b, type: 3}
   bossPool:
-  - {fileID: 7316054681824527838, guid: 6c941004997538e4a891ee3ce0c0b8dd, type: 3}
+  - {fileID: 1813588177185843510, guid: a347dc88a852d024a8e37f0b6215cc67, type: 3}
   - {fileID: 4759536047140887442, guid: 1b416490ee8942e429483e168bf4ab86, type: 3}
-  - {fileID: 7316054681824527838, guid: 28a8ee8a8c11fcc43929578c20a7b995, type: 3}
+  - {fileID: 7316054681824527838, guid: 439831bde0739434294400264410400c, type: 3}
   - {fileID: 1813588177185843510, guid: 72f207fa5b99d3246b47070f6b324269, type: 3}
   - {fileID: 4759536047140887442, guid: 39ac9d336177b7f4fac88c51c6ed0c20, type: 3}
-  - {fileID: 7316054681824527838, guid: 004fedcdd1f222d4db61059190be9d4c, type: 3}
+  - {fileID: 7316054681824527838, guid: b08534947bb4a6840940fcca48db104a, type: 3}
   - {fileID: 1813588177185843510, guid: f5dcc6778fec44a44a1846bb903a5c3f, type: 3}
   - {fileID: 4759536047140887442, guid: bd63ef4a680fa694da80f2d23c6e7ab6, type: 3}
   - {fileID: 7316054681824527838, guid: 6c941004997538e4a891ee3ce0c0b8dd, type: 3}
-  bossWaveInterval: 2
+  bossWaveInterval: 3
   portals: []
   enemyProjectiles: []
   minSpawnTime: 1.5
   maxSpawnTime: 2.2
-  enemiesPerWave: 0
+  enemiesPerWave: 6
   portalPrefab: {fileID: 847388203323242386, guid: e191c2649140f9a4bae0c41c3906a0fe,
     type: 3}
   quittingScene: 0

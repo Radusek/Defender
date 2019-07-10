@@ -196,6 +196,7 @@ public class GameManager : MonoBehaviour {
         playerNameField.gameObject.SetActive(true);
         playerNameField.text = "";
         scoreSubmitButton.gameObject.SetActive(true);
+        playerNameField.characterLimit = 11;
     }
 
     // Update is called once per frame
