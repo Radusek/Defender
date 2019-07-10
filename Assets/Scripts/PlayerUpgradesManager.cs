@@ -15,4 +15,9 @@ public class PlayerUpgradesManager : MonoBehaviour
         else
             Destroy(this.gameObject);
     }
+
+    public void Reset()
+    {
+        playerShootingLevel = 1;
+    }
 }

@@ -55,7 +55,8 @@ public class GameManager : MonoBehaviour {
     bool playerLost = false;
 
     int score = 0;
-    public int livesLeft = 4;
+    public int startingLives = 4;
+    private int livesLeft;
 
     private PlayerMovement playerMovement;
 
@@ -163,6 +164,7 @@ public class GameManager : MonoBehaviour {
     public void SetupLevel()
     {
         DestroyAllAircrafts();
+        PlayerUpgradesManager.Instance.Reset();
         RespawnPlayer();
 
         rbs = new List<Rigidbody>
@@ -173,17 +175,27 @@ public class GameManager : MonoBehaviour {
         camera.transform.position = new Vector3(0f, 0f, -15f);
 
         timeToNextSpawn = 0f;
-        livesLeft = 4;
+        livesLeft = startingLives;
         score = 0;
 
         livesText.SetText("Lives: " + livesLeft.ToString());
         scoreText.SetText("Score: " + score.ToString());
 
         playerLost = false;
+
+        EnableSubmit();
+
         endScreenUI.SetActive(false);
 
         enemiesToSpawn = enemiesPerWave;
         waveNumber = 1;
+    }
+
+    private void EnableSubmit()
+    {
+        playerNameField.gameObject.SetActive(true);
+        playerNameField.text = "";
+        scoreSubmitButton.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
