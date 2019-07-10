@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyRotation : MonoBehaviour
 {
+    public GameObject selfModel;
+
     public float rotationSpeed = 600f;
     private float angleTreshold = 10f; //below this value, just set rotation to a proper value
 
@@ -28,9 +30,9 @@ public class EnemyRotation : MonoBehaviour
         aircraftLeft = Quaternion.Euler(temp);
 
         temp.y = 180f;
-        transform.rotation = Quaternion.Euler(temp);
+        selfModel.transform.rotation = Quaternion.Euler(temp);
 
-        angleTreshold = rotationSpeed / 30f;
+        angleTreshold = rotationSpeed/15f;
     }
 
     // Update is called once per frame
@@ -43,17 +45,17 @@ public class EnemyRotation : MonoBehaviour
     {
         if (movement.directionRight)
         {
-            if (transform.eulerAngles.y < 90f + angleTreshold && transform.eulerAngles.y > 90f - angleTreshold)
-                transform.rotation = aircraftRight;
+            if (selfModel.transform.eulerAngles.y < 90f + angleTreshold && selfModel.transform.eulerAngles.y > 90f - angleTreshold)
+                selfModel.transform.rotation = aircraftRight;
             else
-                transform.Rotate(0f, -rotationSpeed * Time.deltaTime, 0f);
+                selfModel.transform.Rotate(0f, -rotationSpeed * Time.deltaTime, 0f);
         }
         else
         {
-            if (transform.eulerAngles.y < 270f + angleTreshold && transform.eulerAngles.y > 270f - angleTreshold)
-                transform.rotation = aircraftLeft;
+            if (selfModel.transform.eulerAngles.y < 270f + angleTreshold && selfModel.transform.eulerAngles.y > 270f - angleTreshold)
+                selfModel.transform.rotation = aircraftLeft;
             else
-                transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f);
+                selfModel.transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f);
         }
     }
 }

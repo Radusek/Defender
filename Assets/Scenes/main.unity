@@ -639,6 +639,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276589670}
   m_CullTransparentMesh: 0
+--- !u!1 &445211236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 445211238}
+  - component: {fileID: 445211237}
+  m_Layer: 0
+  m_Name: EnemyUpgrades
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &445211237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445211236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9b99b6198443946acc2d0297b36fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &445211238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445211236}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 391.56415, y: 175.72914, z: -67.978455}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &446502802
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,21 +2115,27 @@ MonoBehaviour:
   player: {fileID: 0}
   playerPrefab: {fileID: 1767465330136360, guid: 3cc1902deddd1114ebaf7719af1c5957,
     type: 3}
-  startingLives: 0
+  startingLives: 4
   enemyPool:
   - {fileID: 1159194428903728797, guid: 54fc2e0c4636ee048b991c44e2c62d32, type: 3}
   - {fileID: 6802745913490287276, guid: a21570412564dd345889952924f288f9, type: 3}
   - {fileID: 964576478834174581, guid: 2deb70dce0af20a41bebffc86ca4f22b, type: 3}
   bossPool:
-  - {fileID: 1813588177185843510, guid: a347dc88a852d024a8e37f0b6215cc67, type: 3}
+  - {fileID: 7316054681824527838, guid: 6c941004997538e4a891ee3ce0c0b8dd, type: 3}
+  - {fileID: 4759536047140887442, guid: 1b416490ee8942e429483e168bf4ab86, type: 3}
+  - {fileID: 7316054681824527838, guid: 28a8ee8a8c11fcc43929578c20a7b995, type: 3}
   - {fileID: 1813588177185843510, guid: 72f207fa5b99d3246b47070f6b324269, type: 3}
+  - {fileID: 4759536047140887442, guid: 39ac9d336177b7f4fac88c51c6ed0c20, type: 3}
+  - {fileID: 7316054681824527838, guid: 004fedcdd1f222d4db61059190be9d4c, type: 3}
   - {fileID: 1813588177185843510, guid: f5dcc6778fec44a44a1846bb903a5c3f, type: 3}
-  bossWaveInterval: 4
+  - {fileID: 4759536047140887442, guid: bd63ef4a680fa694da80f2d23c6e7ab6, type: 3}
+  - {fileID: 7316054681824527838, guid: 6c941004997538e4a891ee3ce0c0b8dd, type: 3}
+  bossWaveInterval: 2
   portals: []
   enemyProjectiles: []
   minSpawnTime: 1.5
   maxSpawnTime: 2.2
-  enemiesPerWave: 10
+  enemiesPerWave: 0
   portalPrefab: {fileID: 847388203323242386, guid: e191c2649140f9a4bae0c41c3906a0fe,
     type: 3}
   quittingScene: 0

@@ -147,8 +147,8 @@ GameObject:
   - component: {fileID: 5698065945151444932}
   - component: {fileID: 4797877162144659743}
   - component: {fileID: 4193721943143112271}
-  - component: {fileID: 8442003245011114359}
   - component: {fileID: 2093778649741198752}
+  - component: {fileID: 8188987578390954407}
   - component: {fileID: 1989030184722171812}
   m_Layer: 12
   m_Name: Kamikaze
@@ -201,6 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flightSpeed: 9
+  movementWithAcceleration: 1
+  accelerationRate: 1
 --- !u!114 &4193721943143112271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,19 +216,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selfModel: {fileID: 964576478834174581}
---- !u!114 &8442003245011114359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964576478834174581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f47c1d6f0be74a441a8e18be28e30fb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reward: 150
 --- !u!114 &2093778649741198752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +230,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 691958309936317897, guid: 9fb6817b7762fbc43b3ac1a983f4f56b,
     type: 3}
+--- !u!114 &8188987578390954407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964576478834174581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47c1d6f0be74a441a8e18be28e30fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: 150
 --- !u!136 &1989030184722171812
 CapsuleCollider:
   m_ObjectHideFlags: 0

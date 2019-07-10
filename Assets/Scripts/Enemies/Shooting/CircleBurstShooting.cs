@@ -5,35 +5,20 @@ using UnityEngine;
 
 public class CircleBurstShooting : Shooting
 {
-    public GameObject projectilePrefab;
-
-    public float projectileSpeed = 600f;
-
     public int burstSize = 16;
-
-    public float reloadTime = 1f;
-    private float timeToShoot = 1f;
 
     // Update is called once per frame
     void Update()
     {
-        Shoot();
+        base.UpdateParameters();
+
+        if (CanShoot())
+            Shoot();
     }
 
-    private void Shoot()
+    override protected void Shoot()
     {
-        timeToShoot -= Time.deltaTime;
-
-
-        if (timeToShoot > 0f || GameManager.Instance.GetPlayerLost())
-            return;
-
         Vector3 targetPos = GameManager.Instance.player.transform.position;
-
-        Vector3 distanceToTarget = targetPos - transform.position;
-
-        if (distanceToTarget.x > 15f || distanceToTarget.x < -15f)
-            return;
 
         for (int i = 0; i < burstSize; i++)
         {
@@ -41,12 +26,9 @@ public class CircleBurstShooting : Shooting
             Vector3 projectileDirection = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f);
             projectileDirection.Normalize();
 
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            projectile.GetComponent<Rigidbody>().AddForce(projectileDirection * projectileSpeed);
-            GameManager.Instance.enemyProjectiles.Add(projectile);
+            SpawnProjectile(projectileDirection);
         }
 
-        shotsFired++;
-        timeToShoot = reloadTime;
+        base.Shoot();
     }
 }

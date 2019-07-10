@@ -7,7 +7,6 @@ public class BossHpCollision : EnemyCollision
 {
     public int maxHp = 25;
     private int hp;
-    public int reward = 750;
 
     public Slider healthBar;
 

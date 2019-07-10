@@ -208,7 +208,7 @@ public class GameManager : MonoBehaviour {
         if (playerLost || nextWaveAnimationPlaying)
             return;
 
-        if (enemiesToSpawn == 0 && (rbs.Count + portals.Count) == 1 && player != null)
+        if (enemiesToSpawn <= 0 && (rbs.Count + portals.Count) == 1 && player != null)
         {
             NextWave();
             return;
@@ -217,9 +217,10 @@ public class GameManager : MonoBehaviour {
         timeToNextSpawn -= Time.deltaTime;
         if (timeToNextSpawn <= 0f && enemiesToSpawn > 0)
         {
-            if (waveNumber % bossWaveInterval == 0)
+            if (IsBossWave())
             {
                 SummonBoss();
+                timeToNextSpawn = Random.Range(minSpawnTime, maxSpawnTime);
                 return;
             }
 
@@ -227,6 +228,19 @@ public class GameManager : MonoBehaviour {
 
             timeToNextSpawn = Random.Range(minSpawnTime, maxSpawnTime);
         }
+    }
+
+    public bool IsBossWave()
+    {
+        if (waveNumber % bossWaveInterval == 0)
+            return true;
+
+        return false;
+    }
+
+    public int DifficultyLevel()
+    {
+        return (waveNumber - 1) / bossWaveInterval;
     }
 
     void SummonEnemy()
@@ -243,6 +257,7 @@ public class GameManager : MonoBehaviour {
         portals.Add(portal);
         enemiesToSpawn--;
         portal.enemyPrefab = enemyPool[enemyType];
+        portal.enemyType = enemyType;
     }
 
     void SummonBoss()
@@ -261,6 +276,7 @@ public class GameManager : MonoBehaviour {
         portals.Add(portal);
         enemiesToSpawn--;
         portal.enemyPrefab = bossPool[bossNumber];
+        portal.enemyType = 0;
     }
 
     void NextWave()
@@ -274,7 +290,7 @@ public class GameManager : MonoBehaviour {
         nextWaveAnimation.Play("nextWave");
         nextWaveAnimationPlaying = true;
 
-        enemiesToSpawn = enemiesPerWave;
+        enemiesToSpawn = enemiesPerWave + (int)(1.5f*Mathf.Sqrt(2*(waveNumber-1)));
 
         //Boss wave
         if (waveNumber % bossWaveInterval == 0)
@@ -319,6 +335,9 @@ public class GameManager : MonoBehaviour {
             Destroy(portal.gameObject);
         }
         portals.Clear();
+
+        if (IsBossWave())
+            enemiesToSpawn = 1;
     }
 
     void MoveCamera()
@@ -397,7 +416,6 @@ public class GameManager : MonoBehaviour {
             return;
 
         DestroyAllAircrafts();
-        //enemiesToSpawn--;
         DestroyProjectiles();
 
         if (livesLeft > 0)

@@ -5,6 +5,8 @@ using UnityEngine;
 public class KamikazeMovement : MonoBehaviour
 {
     public float flightSpeed = 8f;
+    public bool movementWithAcceleration = false;
+    public float accelerationRate = 0.5f;
 
     private GameObject target;
     // Start is called before the first frame update
@@ -24,6 +26,9 @@ public class KamikazeMovement : MonoBehaviour
 
     private void Move()
     {
+        if (movementWithAcceleration)
+            flightSpeed += accelerationRate * Time.deltaTime;
+
         Vector3 movementDirection = target.transform.position - transform.position;
         movementDirection.Normalize();
 

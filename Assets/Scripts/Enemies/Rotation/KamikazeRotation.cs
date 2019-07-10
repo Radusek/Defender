@@ -5,6 +5,8 @@ using UnityEngine;
 public class KamikazeRotation : MonoBehaviour
 {
     public GameObject selfModel;
+
+    [HideInInspector]
     private GameObject target;
 
     // Start is called before the first frame update

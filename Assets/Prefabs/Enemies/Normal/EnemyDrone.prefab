@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 1159194428903728793}
   - component: {fileID: 720399664104090}
   - component: {fileID: 6441817319864433325}
-  - component: {fileID: 4353596564495720389}
+  - component: {fileID: 6134553856746695146}
   - component: {fileID: 2574626736260581502}
   - component: {fileID: 2304601060136202326}
   m_Layer: 10
@@ -192,8 +192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caef2d9137f4b1a4bb856441fd6e3fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selfModel: {fileID: 1159194428903728797}
   rotationSpeed: 650
---- !u!114 &4353596564495720389
+--- !u!114 &6134553856746695146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,7 +203,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1159194428903728797}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8affe551b71fb2d49a2d2ddecb9bb66c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a430ba7474839c4aae9e64070c1d703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shotsFired: 0
@@ -210,6 +211,9 @@ MonoBehaviour:
     type: 3}
   projectileSpeed: 600
   reloadTime: 1
+  startingTimeOffset: 1
+  projectilesCount: 1
+  projectilesOffset: 0.4
 --- !u!114 &2574626736260581502
 MonoBehaviour:
   m_ObjectHideFlags: 0

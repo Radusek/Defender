@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class OnCollisionBehaviour : EnemyCollision
 {
-    public int reward = 100;
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == gameObject.layer || dead)
             return;
-
 
         if (GameManager.Instance.GetPlayerLost() == false)
             GameManager.Instance.AddScore(reward);

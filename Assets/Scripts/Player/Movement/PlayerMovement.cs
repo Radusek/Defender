@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour {
         temp.z = 270f;
         aircraftLeft = Quaternion.Euler(temp);
 
-        angleTreshold = rotationSpeed / 30f;
+        angleTreshold = rotationSpeed / 15f;
     }
 
     // Update is called once per frame

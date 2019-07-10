@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caef2d9137f4b1a4bb856441fd6e3fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selfModel: {fileID: 6802745913490287276}
   rotationSpeed: 200
 --- !u!114 &8814828293234783397
 MonoBehaviour:
@@ -264,11 +265,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369822afbb154984a98f2564e4391471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shotsFired: 0
   projectilePrefab: {fileID: 7826199739162168660, guid: 1fca84b0f84a3ff498bea3bb872e34bc,
     type: 3}
   projectileSpeed: 350
-  burstSize: 16
   reloadTime: 3
+  startingTimeOffset: 1
+  burstSize: 16
 --- !u!114 &6802745913490287279
 MonoBehaviour:
   m_ObjectHideFlags: 0
