@@ -18,11 +18,17 @@ public class GameManager : MonoBehaviour {
 
 
     // ######################## UI ########################
+
     public GameObject pauseScreen;
 
     public GameObject nextWaveObject;
     private Animator nextWaveAnimation;
     public TextMeshProUGUI nextWaveText;
+
+    public GameObject shopUI;
+    private Animator enterShopAnimation;
+    public TextMeshProUGUI shopCreditsText;
+
 
     public GameObject endScreenUI;
     public TextMeshProUGUI totalScoreText;
@@ -59,6 +65,8 @@ public class GameManager : MonoBehaviour {
     private int livesLeft;
 
     private PlayerMovement playerMovement;
+
+    public int shopCredits = 0;
 
 
     // ######################## ENEMIES ########################
@@ -101,8 +109,13 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start() {
         SetupLevel();
+
         nextWaveAnimation = nextWaveObject.GetComponent<Animator>();
         nextWaveObject.SetActive(false);
+
+        enterShopAnimation = shopUI.GetComponent<Animator>();
+        shopUI.SetActive(false);
+
         playerMovement = player.GetComponent<PlayerMovement>();
         Time.timeScale = 1f;
     }
@@ -177,6 +190,8 @@ public class GameManager : MonoBehaviour {
         timeToNextSpawn = 0f;
         livesLeft = startingLives;
         score = 0;
+        shopCredits = 0;
+        shopCredits = 0;
 
         livesText.SetText("Lives: " + livesLeft.ToString());
         scoreText.SetText("Score: " + score.ToString());
@@ -211,7 +226,7 @@ public class GameManager : MonoBehaviour {
 
         if (enemiesToSpawn <= 0 && (rbs.Count + portals.Count) == 1 && player != null)
         {
-            NextWave();
+            EnterTheShop();
             return;
         }
 
@@ -280,18 +295,17 @@ public class GameManager : MonoBehaviour {
         portal.enemyType = 0;
     }
 
-    void NextWave()
+    public void NextWave()
     {
-        DestroyProjectiles();
-
-        waveNumber++;
-        nextWaveText.text = "Wave " + waveNumber.ToString();
-        
         nextWaveObject.SetActive(true);
         nextWaveAnimation.Play("nextWave");
-        nextWaveAnimationPlaying = true;
+        shopUI.SetActive(false);
+        
+        waveNumber++;
+        nextWaveText.text = "Wave " + waveNumber.ToString();
 
-        enemiesToSpawn = enemiesPerWave + (int)(1.5f*Mathf.Sqrt(2*(waveNumber-1)));
+
+        enemiesToSpawn = enemiesPerWave + (int)(1.5f * Mathf.Sqrt(2 * (waveNumber - 1)));
 
         //Boss wave
         if (waveNumber % bossWaveInterval == 0)
@@ -304,6 +318,17 @@ public class GameManager : MonoBehaviour {
 
         if (maxSpawnTime < minSpawnTime + minRandomRange)
             maxSpawnTime = minSpawnTime + minRandomRange;
+    }
+
+    void EnterTheShop()
+    {
+        shopCredits += IsBossWave() ? 2 : 1;
+        shopCreditsText.text = "Credits: " + shopCredits.ToString();
+
+        DestroyProjectiles();
+        nextWaveAnimationPlaying = true;
+        shopUI.SetActive(true);
+        enterShopAnimation.Play("enterShop");
     }
 
 

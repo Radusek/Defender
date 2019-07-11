@@ -370,57 +370,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &7004840151434774607
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1756208531346607909}
-  - component: {fileID: 8661628660201928566}
-  m_Layer: 10
-  m_Name: ShootingTower
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1756208531346607909
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7004840151434774607}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2023, z: 0.2819}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8084231583365489356}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8661628660201928566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7004840151434774607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a430ba7474839c4aae9e64070c1d703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shotsFired: 0
-  projectilePrefab: {fileID: 7826199739162168660, guid: 1fca84b0f84a3ff498bea3bb872e34bc,
-    type: 3}
-  projectileSpeed: 1100
-  reloadTime: 1.3
-  startingTimeOffset: 2.5
-  projectilesCount: 1
-  projectilesOffset: 0.4
 --- !u!1 &7316054681824527838
 GameObject:
   m_ObjectHideFlags: 0
@@ -52389,7 +52338,6 @@ Transform:
   - {fileID: 7316054681824344636}
   - {fileID: 7316054681824281220}
   - {fileID: 7316054681824296214}
-  - {fileID: 1756208531346607909}
   m_Father: {fileID: 7316054681824376158}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
