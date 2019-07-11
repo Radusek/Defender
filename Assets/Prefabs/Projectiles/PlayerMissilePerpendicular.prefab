@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 4915927500461150}
   - component: {fileID: 33230474356900390}
   - component: {fileID: 23302402147050170}
-  - component: {fileID: 114069249655130652}
   - component: {fileID: 54397650332910922}
+  - component: {fileID: 6450033315044928690}
+  - component: {fileID: 8242322297076972966}
   - component: {fileID: 3028659553792570923}
   m_Layer: 8
-  m_Name: MissileSidewinder
+  m_Name: PlayerMissilePerpendicular
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1204542212610398}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_Children:
   - {fileID: 4879438516962374}
   - {fileID: 5720887161658209837}
@@ -82,21 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &114069249655130652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204542212610398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85ebbadb1328b124bac375ce096108be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 54397650332910922}
-  lifeTime: 0.6
-  projectileSpeed: 2000
 --- !u!54 &54397650332910922
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113,6 +99,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &6450033315044928690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204542212610398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2bb4c8ee8c51af48846257dc54a5472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 54397650332910922}
+  projectileSpeed: 2000
+--- !u!114 &8242322297076972966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204542212610398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc91362aede879244b453d131eb58d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 0.3
+  sendProjectilesPower: 20
+  projectilePrefab: {fileID: 7826199739162168660, guid: 5fd317c4f3d6ff64fa0c60292cb12fec,
+    type: 3}
 --- !u!114 &3028659553792570923
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -156,6 +156,7 @@ public class GameManager : MonoBehaviour {
     void CleanLevel()
     {
         endScreenUI.SetActive(true);
+        playerNameField.Select();
 
         playerLost = true;
 
@@ -318,6 +319,8 @@ public class GameManager : MonoBehaviour {
 
         if (maxSpawnTime < minSpawnTime + minRandomRange)
             maxSpawnTime = minSpawnTime + minRandomRange;
+
+        player.GetComponent<PlayerUpgrades>().SetUpgrades();
     }
 
     void EnterTheShop()

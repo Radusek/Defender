@@ -308,7 +308,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 133284052}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: TimeSlow
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 133284051}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &133284052
@@ -1618,7 +1629,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 644170541}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: Mine
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 644170540}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &644170541
@@ -1736,7 +1758,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 649085084}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: TripleMissiles
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 649085083}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &649085084
@@ -2014,7 +2047,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 664118443}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: Immortal
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 664118442}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &664118443
@@ -2211,7 +2255,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 753681021}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: Lives
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 753681020}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &753681021
@@ -2591,7 +2646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &818057145
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2677,7 +2732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f6af92439a7e1448a6ca6d6d542a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShootingLevel: 1
+  upgradeBought: 00000000000000000000000000
 --- !u!4 &858661916
 Transform:
   m_ObjectHideFlags: 0
@@ -3494,7 +3549,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1018494563}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: MissileRange
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1018494562}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1018494563
@@ -3762,7 +3828,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1112419728}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: Reflection
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1112419727}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1112419728
@@ -4157,7 +4234,7 @@ RectTransform:
   m_Children:
   - {fileID: 943513865}
   m_Father: {fileID: 2062333663}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4203,7 +4280,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1240052146}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: ScoreBoost1
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1240052145}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1240052146
@@ -4395,7 +4483,7 @@ MonoBehaviour:
   enemyProjectiles: []
   minSpawnTime: 1.5
   maxSpawnTime: 2.2
-  enemiesPerWave: 0
+  enemiesPerWave: 6
   portalPrefab: {fileID: 847388203323242386, guid: e191c2649140f9a4bae0c41c3906a0fe,
     type: 3}
   quittingScene: 0
@@ -4677,7 +4765,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1403827950}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: MissileSize
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1403827949}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1403827950
@@ -6586,7 +6685,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1883259523}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: ScoreBoost2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1883259522}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1883259523
@@ -6740,7 +6850,7 @@ RectTransform:
   m_Children:
   - {fileID: 710248061}
   m_Father: {fileID: 2062333663}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6904,7 +7014,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1917720767}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: Dash
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1917720766}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1917720767
@@ -7145,7 +7266,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2032972978}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: Perpendicular
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2032972977}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2032972978
@@ -7251,8 +7383,8 @@ RectTransform:
   m_Children:
   - {fileID: 753681019}
   - {fileID: 1883259521}
-  - {fileID: 1913392878}
   - {fileID: 1240052144}
+  - {fileID: 1913392878}
   m_Father: {fileID: 91469534}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7339,7 +7471,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2075201338}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 858661915}
+        m_MethodName: DoubleMissiles
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2075201337}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2075201338
