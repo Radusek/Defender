@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: 2500
-  maxHp: 75
+  maxHp: 40
   healthBar: {fileID: 2006016918564806708}
 --- !u!136 &4990661872305856561
 CapsuleCollider:

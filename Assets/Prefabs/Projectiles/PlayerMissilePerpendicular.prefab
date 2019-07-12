@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1204542212610398}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4879438516962374}
   - {fileID: 5720887161658209837}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc91362aede879244b453d131eb58d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0.38
+  lifeTime: 0.3
   sendProjectilesPower: 20
   projectilePrefab: {fileID: 7826199739162168660, guid: 5fd317c4f3d6ff64fa0c60292cb12fec,
     type: 3}

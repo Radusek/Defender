@@ -246,7 +246,7 @@ MonoBehaviour:
   movement: {fileID: 114925593058515882}
   projectilePrefab: {fileID: 1204542212610398, guid: df9121d040451d342938c15e11d577b7,
     type: 3}
-  reloadTime: 0.33
+  reloadTime: 0.2
 --- !u!114 &4463214259632270515
 MonoBehaviour:
   m_ObjectHideFlags: 0

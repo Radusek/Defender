@@ -156,7 +156,6 @@ public class GameManager : MonoBehaviour {
     void CleanLevel()
     {
         endScreenUI.SetActive(true);
-        playerNameField.Select();
 
         playerLost = true;
 

@@ -358,7 +358,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7826199739162168660, guid: 90b21b4bd9dca13429ac334652460c41,
     type: 3}
   projectileSpeed: 1000
-  reloadTime: 0.4
+  reloadTime: 0.45
   startingTimeOffset: 1
   projectilesCount: 2
   projectilesOffset: 3
@@ -471,7 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: 1000
-  maxHp: 30
+  maxHp: 18
   healthBar: {fileID: 2006016918564806708}
 --- !u!136 &4990661872305856561
 CapsuleCollider:

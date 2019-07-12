@@ -2794,11 +2794,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -6258,12 +6258,12 @@ MonoBehaviour:
   - {fileID: 1813588177185843510, guid: f5dcc6778fec44a44a1846bb903a5c3f, type: 3}
   - {fileID: 4759536047140887442, guid: bd63ef4a680fa694da80f2d23c6e7ab6, type: 3}
   - {fileID: 7316054681824527838, guid: 6c941004997538e4a891ee3ce0c0b8dd, type: 3}
-  bossWaveInterval: 3
+  bossWaveInterval: 4
   portals: []
   enemyProjectiles: []
   minSpawnTime: 1.5
   maxSpawnTime: 2.2
-  enemiesPerWave: 3
+  enemiesPerWave: 4
   portalPrefab: {fileID: 847388203323242386, guid: e191c2649140f9a4bae0c41c3906a0fe,
     type: 3}
   quittingScene: 0

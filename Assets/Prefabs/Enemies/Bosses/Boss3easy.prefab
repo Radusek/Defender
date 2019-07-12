@@ -453,7 +453,7 @@ MonoBehaviour:
   - {fileID: 1159194428903728797, guid: 54fc2e0c4636ee048b991c44e2c62d32, type: 3}
   - {fileID: 6802745913490287276, guid: a21570412564dd345889952924f288f9, type: 3}
   summons: []
-  summonRate: 1.1
+  summonRate: 1.6
   initialSummonCooldown: 3
 --- !u!114 &5505048490255350793
 MonoBehaviour:
@@ -52367,7 +52367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: 200
-  maxHp: 40
+  maxHp: 30
   healthBar: {fileID: 4035575551365004767}
 --- !u!54 &1746985933730788029
 Rigidbody:

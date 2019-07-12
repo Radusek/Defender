@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: 750
-  maxHp: 20
+  maxHp: 10
   healthBar: {fileID: 8635256800221516413}
 --- !u!54 &1418763440251993910
 Rigidbody:
