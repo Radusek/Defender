@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 
 public class PlayerUpgrades : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PlayerUpgrades : MonoBehaviour
 
     // base = 0.35f
     private float baseProjectileSize = 0.35f;
-    private float biggerProjectileSize = 0.45f;
+    private float biggerProjectileSize = 0.55f;
 
     // base = 0.3f
     private float baseMissileLifetime = 0.3f;
@@ -26,6 +27,7 @@ public class PlayerUpgrades : MonoBehaviour
     private bool canReflect = false;
     private bool canSlowTime = false;
     private bool canBeImmortal = false;
+
 
     private void Awake()
     {

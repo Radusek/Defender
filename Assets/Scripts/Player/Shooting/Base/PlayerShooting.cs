@@ -13,7 +13,7 @@ public class PlayerShooting : MonoBehaviour
 
     public GameObject projectilePrefab;
 
-    public float reloadTime = 0.125f;
+    public float reloadTime = 0.33f;
     protected float timeToShoot = 0f;
 
     protected int projectileDirection = 1;

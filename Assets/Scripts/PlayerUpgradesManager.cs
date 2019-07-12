@@ -11,6 +11,22 @@ public class PlayerUpgradesManager : MonoBehaviour
     public bool[] upgradeBought = new bool[(int)Upgrade.UpgradesCount];
 
 
+    public Button tripleShotButton;
+    public Button sideShotsButton;
+
+    public Button reflectButton;
+    public Button timeSlowButton;
+
+    public Button scoreBoost2Button;
+    public Button livesButton;
+
+    public Button[] allButtons;
+
+
+    private ColorBlock xorButtonColor;
+    private ColorBlock normalColor;
+
+
     public static PlayerUpgradesManager Instance { get; private set; }
 
     private void Awake()
@@ -24,8 +40,8 @@ public class PlayerUpgradesManager : MonoBehaviour
     private void Start()
     {
         upgradePrice[(int)Upgrade.DoubleMissile] = 5;
-        upgradePrice[(int)Upgrade.TripleMissile] = 8;
-        upgradePrice[(int)Upgrade.Perpendicular] = 6;
+        upgradePrice[(int)Upgrade.TripleMissile] = 6;
+        upgradePrice[(int)Upgrade.Perpendicular] = 9;
         upgradePrice[(int)Upgrade.MissileRange] = 1;
         upgradePrice[(int)Upgrade.MissileSize] = 1;
         upgradePrice[(int)Upgrade.Dash] = 3;
@@ -36,7 +52,13 @@ public class PlayerUpgradesManager : MonoBehaviour
         upgradePrice[(int)Upgrade.ScoreBoost1] = 6;
         upgradePrice[(int)Upgrade.ScoreBoost2] = 9;
         upgradePrice[(int)Upgrade.Lives] = 10;
+
+        normalColor = tripleShotButton.colors;
+
+        xorButtonColor = normalColor;
+        xorButtonColor.disabledColor = Color.black;
     }
+
 
     bool CanAfford(int upgrade)
     {
@@ -45,12 +67,13 @@ public class PlayerUpgradesManager : MonoBehaviour
         return true;
     }
 
-    public void TryToBuyUpgrade(Button button, int upgrade)
+    public bool TryToBuyUpgrade(Button button, int upgrade)
     {
         if (CanAfford(upgrade) == false)
-            return;
+            return false;
 
         BuyUpgrade(button, upgrade);
+        return true;
     }
 
     void BuyUpgrade(Button button, int upgrade)
@@ -72,88 +95,115 @@ public class PlayerUpgradesManager : MonoBehaviour
     public void TripleMissiles(Button button)
     {
         if (upgradeBought[(int)Upgrade.DoubleMissile] && upgradeBought[(int)Upgrade.Perpendicular] == false)
-            TryToBuyUpgrade(button, (int)Upgrade.TripleMissile);
+        {
+            if (TryToBuyUpgrade(button, (int)Upgrade.TripleMissile))
+            {
+                sideShotsButton.colors = xorButtonColor;
+                sideShotsButton.interactable = false;
+            }
+        }
     }
 
     public void Perpendicular(Button button)
     {
         if (upgradeBought[(int)Upgrade.DoubleMissile] && upgradeBought[(int)Upgrade.TripleMissile] == false)
-            TryToBuyUpgrade(button, (int)Upgrade.Perpendicular);
+        {
+            if (TryToBuyUpgrade(button, (int)Upgrade.Perpendicular))
+            {
+                tripleShotButton.colors = xorButtonColor;
+                tripleShotButton.interactable = false;
+            }
+        }
     }
 
     public void MissileRange(Button button)
     {
         TryToBuyUpgrade(button, (int)Upgrade.MissileRange);
-
-        //rob cos
     }
 
     public void MissileSize(Button button)
     {
         TryToBuyUpgrade(button, (int)Upgrade.MissileSize);
-
-        //rob cos
     }
 
     public void Dash(Button button)
     {
         TryToBuyUpgrade(button, (int)Upgrade.Dash);
-
-        //rob cos
     }
 
     public void Mine(Button button)
     {
         TryToBuyUpgrade(button, (int)Upgrade.Mine);
-
-        //rob cos
     }
 
     public void Immortal(Button button)
     {
         TryToBuyUpgrade(button, (int)Upgrade.Immortal);
-
-        //rob cos
     }
 
     public void TimeSlow(Button button)
     {
-        TryToBuyUpgrade(button, (int)Upgrade.TimeSlow);
-
-        //rob cos
+        if (upgradeBought[(int)Upgrade.Immortal] && upgradeBought[(int)Upgrade.Reflection] == false)
+        {
+            if (TryToBuyUpgrade(button, (int)Upgrade.TimeSlow))
+            {
+                reflectButton.colors = xorButtonColor;
+                reflectButton.interactable = false;
+            }      
+        }
     }
 
     public void Reflection(Button button)
     {
-        TryToBuyUpgrade(button, (int)Upgrade.Reflection);
-
-        //rob cos
+        if (upgradeBought[(int)Upgrade.Immortal] && upgradeBought[(int)Upgrade.TimeSlow] == false)
+        {
+            if (TryToBuyUpgrade(button, (int)Upgrade.Reflection))
+            {
+                timeSlowButton.colors = xorButtonColor;
+                timeSlowButton.interactable = false;
+            }
+        }
     }
 
     public void ScoreBoost1(Button button)
     {
         TryToBuyUpgrade(button, (int)Upgrade.ScoreBoost1);
-
-        //rob cos
     }
 
     public void ScoreBoost2(Button button)
     {
-        TryToBuyUpgrade(button, (int)Upgrade.ScoreBoost2);
-
-        //rob cos
+        if (upgradeBought[(int)Upgrade.ScoreBoost1] && upgradeBought[(int)Upgrade.Lives] == false)
+        {
+            if (TryToBuyUpgrade(button, (int)Upgrade.ScoreBoost2))
+            {
+                livesButton.colors = xorButtonColor;
+                livesButton.interactable = false;
+            }
+        }
     }
 
     public void Lives(Button button)
     {
-        TryToBuyUpgrade(button, (int)Upgrade.Lives);
-
-        //rob cos
+        if (upgradeBought[(int)Upgrade.ScoreBoost2] == false)
+        {
+            if (TryToBuyUpgrade(button, (int)Upgrade.Lives))
+            {
+                scoreBoost2Button.colors = xorButtonColor;
+                scoreBoost2Button.interactable = false;
+            }
+        }
     }
 
 
     public void Reset()
     {
-        bool[] upgradeBought = new bool[(int)Upgrade.UpgradesCount];
+        for (int i = 0; i < upgradeBought.Length; i++)
+            upgradeBought[i] = false;
+
+        foreach (var button in allButtons)
+        {
+            button.colors = normalColor;
+            button.interactable = true;
+        }
     }
 }
