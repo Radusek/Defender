@@ -311,7 +311,7 @@ public class GameManager : MonoBehaviour {
         livesText.text = "Lives: " + livesLeft.ToString();
 
 
-        enemiesToSpawn = enemiesPerWave + (int)(1.5f * Mathf.Sqrt(2 * (waveNumber - 1)));
+        enemiesToSpawn = enemiesPerWave + (int)(1.8f * Mathf.Sqrt(2.2f * (waveNumber - 1)));
 
         //Boss wave
         if (waveNumber % bossWaveInterval == 0)
@@ -330,7 +330,7 @@ public class GameManager : MonoBehaviour {
 
     void EnterTheShop()
     {
-        shopCredits += IsBossWave() ? 2 : 100;
+        shopCredits += IsBossWave() ? 2 : 1;
         shopCreditsText.text = "Credits: " + shopCredits.ToString();
 
         DestroyProjectiles();

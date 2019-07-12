@@ -27,6 +27,21 @@ public class PlayerUpgradesManager : MonoBehaviour
     private ColorBlock normalColor;
 
 
+    public GameObject dashUI;
+    public Slider dashSlider;
+
+    public GameObject mineUI;
+    public Slider mineSlider;
+
+    public GameObject immortalUI;
+    public Slider immortalSlider;
+
+    public GameObject reflectUI;
+    public Slider reflectSlider;
+
+    public GameObject timeSlowUI;
+    public Slider timeSlowSlider;
+
     public static PlayerUpgradesManager Instance { get; private set; }
 
     private void Awake()
@@ -128,17 +143,20 @@ public class PlayerUpgradesManager : MonoBehaviour
 
     public void Dash(Button button)
     {
-        TryToBuyUpgrade(button, (int)Upgrade.Dash);
+        if (TryToBuyUpgrade(button, (int)Upgrade.Dash))
+            dashUI.SetActive(true);
     }
 
     public void Mine(Button button)
     {
-        TryToBuyUpgrade(button, (int)Upgrade.Mine);
+        if (TryToBuyUpgrade(button, (int)Upgrade.Mine))
+            mineUI.SetActive(true);
     }
 
     public void Immortal(Button button)
     {
-        TryToBuyUpgrade(button, (int)Upgrade.Immortal);
+        if (TryToBuyUpgrade(button, (int)Upgrade.Immortal))
+            immortalUI.SetActive(true);
     }
 
     public void TimeSlow(Button button)
@@ -149,6 +167,8 @@ public class PlayerUpgradesManager : MonoBehaviour
             {
                 reflectButton.colors = xorButtonColor;
                 reflectButton.interactable = false;
+
+                timeSlowUI.SetActive(true);
             }      
         }
     }
@@ -161,6 +181,8 @@ public class PlayerUpgradesManager : MonoBehaviour
             {
                 timeSlowButton.colors = xorButtonColor;
                 timeSlowButton.interactable = false;
+
+                reflectUI.SetActive(true);
             }
         }
     }
@@ -194,6 +216,28 @@ public class PlayerUpgradesManager : MonoBehaviour
         }
     }
 
+    public void SetCooldownSlider(float value, int ability)
+    {
+        switch (ability)
+        {
+            case (int)Upgrade.Dash:
+                dashSlider.value = value;
+                break;
+            case (int)Upgrade.Mine:
+                mineSlider.value = value;
+                break;
+            case (int)Upgrade.Immortal:
+                immortalSlider.value = value;
+                break;
+            case (int)Upgrade.Reflection:
+                reflectSlider.value = value;
+                break;
+            case (int)Upgrade.TimeSlow:
+                timeSlowSlider.value = value;
+                break;
+        }
+    }
+
 
     public void Reset()
     {
@@ -205,5 +249,11 @@ public class PlayerUpgradesManager : MonoBehaviour
             button.colors = normalColor;
             button.interactable = true;
         }
+
+        dashUI.SetActive(false);
+        mineUI.SetActive(false);
+        immortalUI.SetActive(false);
+        reflectUI.SetActive(false);
+        timeSlowUI.SetActive(false);
     }
 }

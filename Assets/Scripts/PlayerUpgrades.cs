@@ -39,20 +39,24 @@ public class PlayerUpgrades : MonoBehaviour
     private bool canSetMines = false;
 
     public GameObject minePrefab;
-    private float mineCooldown = 8f;
+    private float mineCooldown = 7f;
     private float timeToSetMine = 0f;
+
+
 
     private bool canReflect = false;
 
-    private float reflectCooldown = 1f;
+    private float reflectCooldown = 15f;
     private float timeToReflect = 0f;
+
+
 
 
     private bool canSlowTime = false;
 
     private float slowMultiplier = 0.5f;
     private float slowDuration = 1.5f;
-    private float slowCooldown = 15f;
+    private float slowCooldown = 12f;
     private float timeToSlow = 0f;
     bool slowTimeSpeedReduced = true;
 
@@ -64,6 +68,7 @@ public class PlayerUpgrades : MonoBehaviour
     private float immortalCooldown = 15f;
     private float timeToImmortal = 0f;
     public GameObject immortalEffect;
+
 
 
     private void Awake()
@@ -187,6 +192,13 @@ public class PlayerUpgrades : MonoBehaviour
             stoppedDash = true;
         }
 
+        if (timeToDash < 0f)
+            timeToDash = 0f;
+
+        PlayerUpgradesManager.Instance.SetCooldownSlider(timeToDash / dashCooldown, (int)PlayerUpgradesManager.Upgrade.Dash);
+
+
+
         timeToSlow -= Time.deltaTime;
         if (timeToSlow <= slowCooldown - slowDuration && slowTimeSpeedReduced == false)
         {
@@ -209,6 +221,14 @@ public class PlayerUpgrades : MonoBehaviour
             slowTimeSpeedReduced = true;
         }
 
+
+        if (timeToSlow < 0f)
+            timeToSlow = 0f;
+
+        PlayerUpgradesManager.Instance.SetCooldownSlider(timeToSlow / slowCooldown, (int)PlayerUpgradesManager.Upgrade.TimeSlow);
+
+
+
         timeToImmortal -= Time.deltaTime;
         if (timeToImmortal <= immortalCooldown - immortalDuration)
         {
@@ -216,9 +236,30 @@ public class PlayerUpgrades : MonoBehaviour
             gameObject.layer = 9; // PLAYER
         }
 
+        if (timeToImmortal < 0f)
+            timeToImmortal = 0f;
+
+        PlayerUpgradesManager.Instance.SetCooldownSlider(timeToImmortal / immortalCooldown, (int)PlayerUpgradesManager.Upgrade.Immortal);
+
+
+
+
         timeToReflect -= Time.deltaTime;
 
+        if (timeToReflect < 0f)
+            timeToReflect = 0f;
+
+        PlayerUpgradesManager.Instance.SetCooldownSlider(timeToReflect / reflectCooldown, (int)PlayerUpgradesManager.Upgrade.Reflection);
+
+
+
         timeToSetMine -= Time.deltaTime;
+
+        if (timeToSetMine < 0f)
+            timeToSetMine = 0f;
+
+        PlayerUpgradesManager.Instance.SetCooldownSlider(timeToSetMine / mineCooldown, (int)PlayerUpgradesManager.Upgrade.Mine);
+
     }
 
 
