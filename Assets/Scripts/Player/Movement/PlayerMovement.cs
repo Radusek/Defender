@@ -97,6 +97,12 @@ public class PlayerMovement : MonoBehaviour {
         return directionRight;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameManager.Instance.RemoveFromList(this.GetComponent<Rigidbody>());
+        Destroy(gameObject);
+    }
+
     private void OnDestroy()
     {
         GameManager.Instance.LoseLife();

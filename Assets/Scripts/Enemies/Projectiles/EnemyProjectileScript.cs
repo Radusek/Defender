@@ -15,8 +15,11 @@ public class EnemyProjectileScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(collision.gameObject);
-
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.enemyProjectiles.Remove(gameObject);
     }
 }

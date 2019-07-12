@@ -12,9 +12,9 @@ public class OnCollisionBehaviour : EnemyCollision
         if (GameManager.Instance.GetPlayerLost() == false)
             GameManager.Instance.AddScore(reward);
 
-        GameManager.Instance.RemoveFromList(collision.gameObject.GetComponent<Rigidbody>());
+        //GameManager.Instance.RemoveFromList(collision.gameObject.GetComponent<Rigidbody>());
         dead = true;
-        Destroy(collision.gameObject);
+        //Destroy(collision.gameObject);
 
         GameManager.Instance.RemoveFromList(this.GetComponent<Rigidbody>());
 

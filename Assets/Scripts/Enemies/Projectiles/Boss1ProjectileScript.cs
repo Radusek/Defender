@@ -10,7 +10,7 @@ public class Boss1ProjectileScript : MonoBehaviour
 
     public float distanceFromCenter = 0.5f;
     public float sendProjectilesPower = 200f;
-    public float lifeTime = 2f;
+    public float lifeTime = 1f;
 
     public GameObject projectilePrefab;
 
@@ -49,10 +49,13 @@ public class Boss1ProjectileScript : MonoBehaviour
     {
         for (int i = 0; i < projectilesCount; i++)
         {
+            if (projectiles[i] == null)
+                continue;
+            
             float baseAngle = 2f * Mathf.PI * (float)i / (float)projectilesCount;
             Vector3 positionOffset = new Vector3(Mathf.Cos(baseAngle + angle), Mathf.Sin(baseAngle + angle), 0f);
             positionOffset *= distanceFromCenter;
-
+ 
             projectiles[i].transform.position = transform.position + positionOffset;
         }
     }
@@ -61,18 +64,20 @@ public class Boss1ProjectileScript : MonoBehaviour
     {
         for (int i = 0; i < projectilesCount; i++)
         {
+            if (projectiles[i] == null)
+                continue;
+
             Vector3 addedVelocity = Vector3.Normalize(projectiles[i].transform.position - transform.position) * sendProjectilesPower;
 
             projectiles[i].velocity += addedVelocity;
         }
 
-        Destroy(this.gameObject);
+        GameManager.Instance.enemyProjectiles.Remove(gameObject);
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(collision.gameObject);
-
-        Destroy(gameObject);
+        SendProjectiles();
     }
 }

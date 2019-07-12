@@ -305,6 +305,11 @@ public class GameManager : MonoBehaviour {
         waveNumber++;
         nextWaveText.text = "Wave " + waveNumber.ToString();
 
+        if (PlayerUpgradesManager.Instance.upgradeBought[(int)PlayerUpgradesManager.Upgrade.Lives] && waveNumber % 9 == 0)
+            livesLeft++;
+
+        livesText.text = "Lives: " + livesLeft.ToString();
+
 
         enemiesToSpawn = enemiesPerWave + (int)(1.5f * Mathf.Sqrt(2 * (waveNumber - 1)));
 
@@ -435,7 +440,15 @@ public class GameManager : MonoBehaviour {
 
     public void AddScore(int value)
     {
-        score += value;
+        float bonusModifier = 1f;
+
+        if (PlayerUpgradesManager.Instance.upgradeBought[(int)PlayerUpgradesManager.Upgrade.ScoreBoost1])
+            bonusModifier = 1.05001f;
+
+        if (PlayerUpgradesManager.Instance.upgradeBought[(int)PlayerUpgradesManager.Upgrade.ScoreBoost2])
+            bonusModifier = 1.10001f;
+
+        score += (int)(bonusModifier * (float)value);
         scoreText.text = "Score: " + score.ToString();
     }
 
@@ -507,5 +520,28 @@ public class GameManager : MonoBehaviour {
 
         scoreSubmitButton.SetActive(false);
         playerNameField.gameObject.SetActive(false);
+    }
+
+    public void ReflectEnemyProjectiles()
+    {
+        List<GameObject> toRemove = new List<GameObject>();
+
+        foreach (var projectile in enemyProjectiles)
+        {
+            Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
+
+            float magnitude = projectileRb.velocity.magnitude;
+            Vector3 newDirection = Vector3.Normalize(projectile.transform.position - player.transform.position);
+
+            projectileRb.velocity = newDirection * magnitude;
+
+            projectile.layer = 8;
+            toRemove.Add(projectile);
+        }
+
+        foreach (var obj in toRemove)
+        {
+            enemyProjectiles.Remove(obj);
+        }
     }
 }

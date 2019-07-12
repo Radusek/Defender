@@ -21,11 +21,11 @@ public class PerpendicularShot : AutoDestroyBase
         for (int i = 0; i < 2; i++)
         {
             GameObject projectile = Instantiate(projectilePrefab, gameObject.transform.position, Quaternion.identity);
-            GameManager.Instance.enemyProjectiles.Add(projectile);
 
             Vector3 addedVelocity = (i == 0 ? Vector3.up : Vector3.down) * sendProjectilesPower;
-
             projectile.GetComponent<Rigidbody>().velocity += addedVelocity;
+
+            GameManager.Instance.enemyProjectiles.Add(projectile);
         }
 
         Destroy(gameObject);

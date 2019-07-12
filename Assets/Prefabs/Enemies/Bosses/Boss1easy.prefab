@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837972cebce346744855e0cd6313324f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 20
   reward: 750
+  maxHp: 20
   healthBar: {fileID: 8635256800221516413}
 --- !u!54 &1418763440251993910
 Rigidbody:
@@ -137,9 +137,9 @@ GameObject:
   - component: {fileID: 1813588177185843502}
   - component: {fileID: 1813588177185843496}
   - component: {fileID: 1813588177185843499}
-  - component: {fileID: 1813588177185843509}
   - component: {fileID: 1813588177185843508}
   - component: {fileID: 2882863843308649672}
+  - component: {fileID: 1813588177185843509}
   m_Layer: 10
   m_Name: Boss1easy
   m_TagString: Untagged
@@ -192,6 +192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flightSpeed: 6
+  movementWithAcceleration: 0
+  accelerationRate: 0.5
 --- !u!114 &1813588177185843499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,20 +207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selfModel: {fileID: 1813588176876074816}
---- !u!114 &1813588177185843509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813588177185843510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88c6117121ba2f942a6ed3355a60092c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 691958309936317897, guid: 99caca2adf5cce74abdec5d8c8b35eda,
-    type: 3}
 --- !u!114 &1813588177185843508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +224,7 @@ MonoBehaviour:
     type: 3}
   projectileSpeed: 1000
   reloadTime: 1.1
+  startingTimeOffset: 1
 --- !u!114 &2882863843308649672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +240,20 @@ MonoBehaviour:
   baseProjectileCount: 3
   basePosFromCenter: 0.5
   b1p: {fileID: 5250683876364779270, guid: 4944e38c379c1b9488130f45410a0dbf, type: 3}
+--- !u!114 &1813588177185843509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813588177185843510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c6117121ba2f942a6ed3355a60092c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 691958309936317897, guid: 99caca2adf5cce74abdec5d8c8b35eda,
+    type: 3}
 --- !u!1 &2083203225908113162
 GameObject:
   m_ObjectHideFlags: 0
