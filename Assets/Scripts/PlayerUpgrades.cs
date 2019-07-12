@@ -54,6 +54,7 @@ public class PlayerUpgrades : MonoBehaviour
     private float slowDuration = 1.5f;
     private float slowCooldown = 15f;
     private float timeToSlow = 0f;
+    bool slowTimeSpeedReduced = true;
 
 
 
@@ -146,7 +147,10 @@ public class PlayerUpgrades : MonoBehaviour
         }
 
         if (PlayerUpgradesManager.Instance.upgradeBought[(int)PlayerUpgradesManager.Upgrade.TimeSlow])
+        {
+            slowTimeSpeedReduced = true;
             canSlowTime = true;
+        }
 
         if (PlayerUpgradesManager.Instance.upgradeBought[(int)PlayerUpgradesManager.Upgrade.Reflection])
             canReflect = true;
@@ -184,9 +188,25 @@ public class PlayerUpgrades : MonoBehaviour
         }
 
         timeToSlow -= Time.deltaTime;
-        if (timeToSlow <= slowCooldown - slowDuration)
+        if (timeToSlow <= slowCooldown - slowDuration && slowTimeSpeedReduced == false)
         {
+            playerMovement.flightSpeed /= 2;
+
+            PlayerShooting shooting = null;
+            if (shootingLevel % 2 == 1)
+            {
+                shooting = gameObject.GetComponent<BasicPlayerShooting>();
+                shooting.reloadTime *= 2;
+            }
+            if (shootingLevel % 2 == 0)
+            {
+                shooting = gameObject.GetComponent<DoublePlayerShooting>();
+                shooting.reloadTime *= 2;
+            }
+
             Time.timeScale = 1f;
+
+            slowTimeSpeedReduced = true;
         }
 
         timeToImmortal -= Time.deltaTime;
@@ -247,6 +267,21 @@ public class PlayerUpgrades : MonoBehaviour
     {
         if (timeToSlow > 0f)
             return;
+
+        playerMovement.flightSpeed *= 2;
+        slowTimeSpeedReduced = false;
+
+        PlayerShooting shooting = null;
+        if (shootingLevel % 2 == 1)
+        {
+            shooting = gameObject.GetComponent<BasicPlayerShooting>();
+            shooting.reloadTime /= 2;
+        }
+        if (shootingLevel > 1)
+        {
+            shooting = gameObject.GetComponent<DoublePlayerShooting>();
+            shooting.reloadTime /= 2;
+        }
 
         Time.timeScale = slowMultiplier;
         timeToSlow = slowCooldown;
