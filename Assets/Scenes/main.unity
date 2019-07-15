@@ -1817,7 +1817,7 @@ MonoBehaviour:
   m_Text: 'Side Shots
 
 
-    6 credits'
+    9 credits'
 --- !u!222 &433160361
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2798,7 +2798,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
