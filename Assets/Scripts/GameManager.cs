@@ -324,7 +324,7 @@ public class GameManager : MonoBehaviour {
         if (maxSpawnTime < minSpawnTime + minRandomRange)
             maxSpawnTime = minSpawnTime + minRandomRange;
 
-        PlayerUpgrades upgrades = GetComponent<PlayerUpgrades>();
+        PlayerUpgrades upgrades = player.GetComponent<PlayerUpgrades>();
         upgrades.SetUpgrades();
         upgrades.ResetCooldowns();
     }
