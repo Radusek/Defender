@@ -73,10 +73,12 @@ public class PlayerUpgrades : MonoBehaviour
 
     private void Awake()
     {
+        shootingLevel = 1;
+
         projectileStats = projectilePrefab.GetComponent<AutoDestroy>();
-        SetUpgrades();
         rb = gameObject.GetComponent<Rigidbody>();
         playerMovement = gameObject.GetComponent<PlayerMovement>();
+        SetUpgrades();
     }
 
     public void SetUpgrades()
@@ -111,27 +113,34 @@ public class PlayerUpgrades : MonoBehaviour
 
         if (PlayerUpgradesManager.Instance.upgradeBought[(int)PlayerUpgradesManager.Upgrade.TripleMissile])
         {
-            if (shootingLevel == 1)
-                shooting = gameObject.AddComponent<DoublePlayerShooting>();    
-            else if (shootingLevel == 2)
-                shooting  = gameObject.AddComponent<BasicPlayerShooting>();
+            if (shootingLevel == 1 || shootingLevel == 2)
+            {
+                if (shootingLevel == 1)
+                    shooting = gameObject.AddComponent<DoublePlayerShooting>();
+                else if (shootingLevel == 2)
+                    shooting = gameObject.AddComponent<BasicPlayerShooting>();
 
-            shooting.movement = playerMovement;
-            shooting.projectilePrefab = projectilePrefab;
 
-            shootingLevel = 3;
+
+                shooting.movement = playerMovement;
+                shooting.projectilePrefab = projectilePrefab;
+
+                shootingLevel = 3;
+            }
         }
         else if (PlayerUpgradesManager.Instance.upgradeBought[(int)PlayerUpgradesManager.Upgrade.DoubleMissile])
         {
             if (shootingLevel == 1)
+            {
                 shooting = gameObject.AddComponent<DoublePlayerShooting>();
 
-            shooting.movement = playerMovement;
-            shooting.projectilePrefab = projectilePrefab;
+                shooting.movement = playerMovement;
+                shooting.projectilePrefab = projectilePrefab;
 
-            Destroy(GetComponent<BasicPlayerShooting>());
+                Destroy(GetComponent<BasicPlayerShooting>());
 
-            shootingLevel = 2;
+                shootingLevel = 2;
+            }
         }
 
         // ############################################## ABILITIES ##############################################
