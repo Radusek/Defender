@@ -329,7 +329,7 @@ public class GameManager : MonoBehaviour {
 
     void EnterTheShop()
     {
-        shopCredits += IsBossWave() ? 2 : 1;
+        shopCredits += IsBossWave() ? 2 : 100;
         shopCreditsText.text = "Credits: " + shopCredits.ToString();
 
         DestroyProjectiles();
