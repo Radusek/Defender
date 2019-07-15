@@ -6263,7 +6263,7 @@ MonoBehaviour:
   enemyProjectiles: []
   minSpawnTime: 1.5
   maxSpawnTime: 2.2
-  enemiesPerWave: 0
+  enemiesPerWave: 4
   portalPrefab: {fileID: 847388203323242386, guid: e191c2649140f9a4bae0c41c3906a0fe,
     type: 3}
   quittingScene: 0
