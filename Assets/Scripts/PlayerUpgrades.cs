@@ -337,6 +337,15 @@ public class PlayerUpgrades : MonoBehaviour
         timeToSlow = slowCooldown;
     }
 
+    public void ResetCooldowns()
+    {
+        timeToDash = 0f;
+        timeToImmortal = 0f;
+        timeToReflect = 0f;
+        timeToSetMine = 0f;
+        timeToSlow = 0f;
+    }
+
     private void OnDestroy()
     {
         Time.timeScale = 1f;
