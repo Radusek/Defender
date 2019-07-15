@@ -274,8 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 114925593058515882}
-  projectilePrefab: {fileID: 1204542212610398, guid: df9121d040451d342938c15e11d577b7,
-    type: 3}
+  projectilePrefab: {fileID: 216, guid: df9121d040451d342938c15e11d577b7, type: 3}
   perpendicularProjectilePrefab: {fileID: 1204542212610398, guid: 2b2150b6ac18e34418438102f942d333,
     type: 3}
   minePrefab: {fileID: 7309885878755703221, guid: 7ff088c87243d934caad392942ec6c82,

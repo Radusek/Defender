@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_Text: '3 Missiles
 
 
-    8 credits'
+    6 credits'
 --- !u!222 &244594166
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3770,7 +3770,7 @@ RectTransform:
   - {fileID: 1003801139}
   - {fileID: 2123540200}
   m_Father: {fileID: 1290276882}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5203,7 +5203,7 @@ RectTransform:
   - {fileID: 1491935114}
   - {fileID: 266340663}
   m_Father: {fileID: 1290276882}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6376,8 +6376,8 @@ RectTransform:
   - {fileID: 172273137}
   - {fileID: 241049534}
   - {fileID: 21391936}
-  - {fileID: 1070967193}
   - {fileID: 818057145}
+  - {fileID: 1070967193}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6459,7 +6459,7 @@ MonoBehaviour:
   m_Text: '2 Missiles
 
 
-    5 credits'
+    9 credits'
 --- !u!222 &1308000981
 CanvasRenderer:
   m_ObjectHideFlags: 0
