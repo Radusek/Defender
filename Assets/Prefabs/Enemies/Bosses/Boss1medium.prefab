@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837972cebce346744855e0cd6313324f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: 2000
   maxHp: 25
-  reward: 1250
   healthBar: {fileID: 8635256800221516413}
 --- !u!54 &1418763440251993910
 Rigidbody:
@@ -192,6 +192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flightSpeed: 6.5
+  movementWithAcceleration: 0
+  accelerationRate: 0.5
 --- !u!114 &1813588177185843499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +238,7 @@ MonoBehaviour:
     type: 3}
   projectileSpeed: 1000
   reloadTime: 1
+  startingTimeOffset: 1
 --- !u!114 &1813588177185843511
 MonoBehaviour:
   m_ObjectHideFlags: 0

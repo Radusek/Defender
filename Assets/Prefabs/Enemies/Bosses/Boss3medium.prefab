@@ -52366,8 +52366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837972cebce346744855e0cd6313324f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 3250
-  maxHp: 55
+  reward: 2750
+  maxHp: 50
   healthBar: {fileID: 4035575551365004767}
 --- !u!54 &1746985933730788029
 Rigidbody:

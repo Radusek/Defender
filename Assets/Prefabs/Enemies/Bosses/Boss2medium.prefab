@@ -451,8 +451,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837972cebce346744855e0cd6313324f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 1500
-  maxHp: 35
+  reward: 2250
+  maxHp: 36
   healthBar: {fileID: 2006016918564806708}
 --- !u!136 &4990661872305856561
 CapsuleCollider:
