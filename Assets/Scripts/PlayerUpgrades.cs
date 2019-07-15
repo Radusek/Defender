@@ -327,5 +327,10 @@ public class PlayerUpgrades : MonoBehaviour
         Time.timeScale = slowMultiplier;
         timeToSlow = slowCooldown;
     }
+
+    private void OnDestroy()
+    {
+        Time.timeScale = 1f;
+    }
 }
 
