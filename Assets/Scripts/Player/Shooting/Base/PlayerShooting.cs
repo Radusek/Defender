@@ -18,6 +18,12 @@ public class PlayerShooting : MonoBehaviour
 
     protected int projectileDirection = 1;
 
+
+    public float maxHoldDownTime = 3f;
+    private float holdDownTime = 0f;
+    private bool spaceReleased = true;
+
+
     private void Start()
     {
         Vector3 temp = new Vector3(0f, 90f, 0f);
@@ -27,7 +33,7 @@ public class PlayerShooting : MonoBehaviour
         projectileLeft = Quaternion.Euler(temp);
     }
 
-    protected void UpdateParameters()
+    protected int UpdateParameters()
     {
         if (movement.directionRight)
         {
@@ -40,14 +46,47 @@ public class PlayerShooting : MonoBehaviour
             projectileDirection = -1;
         }
 
+
         timeToShoot -= Time.deltaTime;
         if (timeToShoot < 0f)
             timeToShoot = 0f;
+
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            holdDownTime += Time.deltaTime;
+            spaceReleased = false;
+            return 0;
+        }
+        else if (holdDownTime >= maxHoldDownTime)
+        {
+            if (spaceReleased == false)
+            {
+                //szczeloj mocno
+                holdDownTime = 0f;
+                spaceReleased = true;
+                return 2;
+            }
+            else
+                return 0;
+        }
+        else
+        {
+            if (spaceReleased == false)
+            {
+                //szczeloj slabo
+                holdDownTime = 0f;
+                spaceReleased = true;
+                return 1;
+            }
+            else
+                return 0;
+        }
     }
 
     protected bool CanShoot()
     {
-        if (Input.GetKey(KeyCode.Space) && timeToShoot == 0f)
+        if (timeToShoot == 0f)
             return true;
 
         return false;

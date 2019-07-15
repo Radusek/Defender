@@ -7,26 +7,46 @@ public class DoublePlayerShooting : PlayerShooting
     // Update is called once per frame
     void Update()
     {
-        base.UpdateParameters();
-        Shoot();
+        Shoot(base.UpdateParameters());
     }
 
-    private void Shoot()
+    private void Shoot(int shootingType)
     {
-        if (base.CanShoot() == false)
+        if (shootingType == 0 || base.CanShoot() == false)
             return;
 
-        for (int i = 0; i < 2; i++)
+        if (shootingType == 1)
         {
-            GameObject projectile = Instantiate(projectilePrefab, transform.position + i * 0.2f * Vector3.down, chosenRotation);
+            for (int i = 0; i < 2; i++)
+            {
+                GameObject projectile = Instantiate(projectilePrefab, transform.position + i * 0.2f * Vector3.down, chosenRotation);
 
-            projectile.GetComponent<Rigidbody>().AddForce(new Vector3(
-                movement.stopped == false ? projectileDirection * 500f : 0f,
-                i == 0 ? 200f : -200f,
-                0f)
-            );
+                projectile.GetComponent<Rigidbody>().AddForce(new Vector3(
+                    movement.stopped == false ? projectileDirection * 500f : 0f,
+                    i == 0 ? 200f : -200f,
+                    0f)
+                );
+            }
+
+            timeToShoot = reloadTime;
         }
+        else if (shootingType == 2)
+        {
+            for (int j = -1; j <= 1; j++)
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    GameObject projectile = Instantiate(projectilePrefab, transform.position + i * 0.2f * Vector3.down + 2*j * Vector3.right, chosenRotation);
 
-        timeToShoot = reloadTime;
+                    projectile.GetComponent<Rigidbody>().AddForce(new Vector3(
+                        movement.stopped == false ? projectileDirection * 500f : 0f,
+                        i == 0 ? 200f : -200f,
+                        0f)
+                    );
+                }
+            }
+
+            timeToShoot = 2 * reloadTime;
+        }
     }
 }
