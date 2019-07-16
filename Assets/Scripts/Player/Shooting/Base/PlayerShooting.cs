@@ -19,7 +19,7 @@ public class PlayerShooting : MonoBehaviour
     protected int projectileDirection = 1;
 
 
-    public float maxHoldDownTime = 3f;
+    public float maxHoldDownTime = 0.75f;
     private float holdDownTime = 0f;
     private bool spaceReleased = true;
 
@@ -51,6 +51,7 @@ public class PlayerShooting : MonoBehaviour
         if (timeToShoot < 0f)
             timeToShoot = 0f;
 
+        PlayerUpgradesManager.Instance.setShootingSliderValue(1f - ((holdDownTime - 0.2f) / (maxHoldDownTime - 0.2f)));
 
         if (Input.GetKey(KeyCode.Space))
         {

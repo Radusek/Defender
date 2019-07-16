@@ -42,6 +42,11 @@ public class PlayerUpgradesManager : MonoBehaviour
     public GameObject timeSlowUI;
     public Slider timeSlowSlider;
 
+
+    public GameObject shootingSliderObject;
+    public Slider shootingSlider;
+
+
     public static PlayerUpgradesManager Instance { get; private set; }
 
     private void Awake()
@@ -50,6 +55,8 @@ public class PlayerUpgradesManager : MonoBehaviour
             Instance = this;
         else
             Destroy(this.gameObject);
+
+        shootingSlider.value = 1f;
     }
 
     private void Start()
@@ -74,6 +81,10 @@ public class PlayerUpgradesManager : MonoBehaviour
         xorButtonColor.disabledColor = Color.black;
     }
 
+    private void Update()
+    {
+        ShowShootingSlider(shootingSlider.value < 1f);
+    }
 
     bool CanAfford(int upgrade)
     {
@@ -255,5 +266,15 @@ public class PlayerUpgradesManager : MonoBehaviour
         immortalUI.SetActive(false);
         reflectUI.SetActive(false);
         timeSlowUI.SetActive(false);
+    }
+
+    public void setShootingSliderValue(float val)
+    {
+        shootingSlider.value = val;
+    }
+
+    public void ShowShootingSlider(bool b)
+    {
+        shootingSliderObject.SetActive(b);
     }
 }
